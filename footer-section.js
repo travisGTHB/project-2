@@ -1,5 +1,33 @@
-import { LitElement, html } from 'lit';
-export class FooterSection extends LitElement {
-  render() { return html`<footer>© 2026 Community Easter Egg Hunt</footer>`; }
+import { html, css } from 'lit';
+import { DDD } from "@haxtheweb/d-d-d/d-d-d.js";
+
+export class FooterSection extends DDD {
+  static get tag() { return 'footer-section'; }
+
+  static get styles() {
+    return [
+      super.styles,
+      css`
+        :host {
+          display: block;
+          background: #6a0dad;
+          color: #f3e8ff;
+          text-align: center;
+          padding: var(--ddd-spacing-6);
+          margin-top: auto;
+        }
+        p {
+          margin: 0;
+          font-family: var(--ddd-font-primary);
+          font-size: 0.9rem;
+          letter-spacing: 0.5px;
+        }
+      `
+    ];
+  }
+
+  render() {
+    return html`<footer><p>© 2026 Community Easter Egg Hunt</p></footer>`;
+  }
 }
 customElements.define('footer-section', FooterSection);
